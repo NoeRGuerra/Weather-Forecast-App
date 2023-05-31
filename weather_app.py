@@ -1,11 +1,10 @@
 from flask import Flask, render_template, url_for
 import requests
-import config
 import datetime
 
 app = Flask(__name__)
-OPENWEATHER_API_KEY = config.OPENWEATHER_API_KEY
-ZIP_API_KEY = config.ZIP_API_KEY
+OPENWEATHER_API_KEY = 'YOUR_API_KEY'
+ZIP_API_KEY = 'YOUR_API_KEY'
 ZIP_BASE_URL = "https://thezipcodes.com/api/v1/search?"
 OPENWEATHER_BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
@@ -30,7 +29,7 @@ icon_filenames = {"01d": "clear",
 
 @app.route("/")
 def home():
-    zip_code = 28027
+    zip_code = 37188
     country_code = "US"
     latitude, longitude = get_coordinates(zip_code, country_code)
     
